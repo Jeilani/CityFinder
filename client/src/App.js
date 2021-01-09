@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Dashboard from "./Components/Dashboard"
+import Login from "./Components/Login"
+import "./CSS/App.css"
 
-function App() {
+function App () {
+  const [whichPage, setWhichPage] = React.useState("Login")
+
+  const renderPage = () => {
+    switch (whichPage){
+      case "Dashboard":
+        return <Dashboard setWhichPage = {setWhichPage}/>
+      case "Login":
+        return <Login setWhichPage = {setWhichPage}/>
+      default:
+        return <Login setWhichPage = {setWhichPage}/>
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {renderPage()}
     </div>
   );
 }

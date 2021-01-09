@@ -1,0 +1,63 @@
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    .logoutButton{
+        position:absolute;
+        right: 10px;
+        z-index: 3;
+        color:white;
+        border-radius: 50%;
+        transition-duration:1s;
+    }
+    .logoutButton:hover{
+        background-color: rgba(0, 0, 0, .3);
+        border-radius: 50%;
+        transition-duration: 1s;
+    }
+    .bar{
+        position: absolute;
+        height: 5%;
+        width: 80%;
+        left: 10%;
+        background-color: rgb(131, 203, 224);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    .helpUser{
+        transition-duration: .2s;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("../images/HelpPic.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: lighten;
+        color: white;
+    }
+
+    .lookResidence{
+        transition-duration: .2s;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("../images/ApartmentPic1.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: lighten;
+        color:white;
+    }
