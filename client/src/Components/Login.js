@@ -65,7 +65,7 @@ const Login = props => {
     return (
         <div className="loginPage">
                 <div className="mainLoginContent">
-                    <h1>City Search</h1>
+                    <h1 className="">City Search</h1>
                     <h3>Create an account or login to chat with people who are looking to move in your area/apartment building and visa versa</h3>
                     <h3>Apartment Hunt will let you interact anyone across the country so you can learn about the place you want to move to</h3>
                 </div>

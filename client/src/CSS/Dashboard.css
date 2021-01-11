@@ -1,3 +1,39 @@
+.dashboardPopUp{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+    .innerPopUp{
+        background-color: white;
+        height: 20%;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+    }
+        .buttonsContainer{
+            display: flex;
+            flex-direction: row;
+            width: 40%;
+            justify-content: space-between;
+        }
+            .buttonsContainer button{
+                width: 40%;
+                height: 90%;
+                display: flex;
+                margin: 4px;
+                padding: 10px;
+                justify-content: center;
+                align-items: center;
+            }
+
 .dashboard{
     display: flex;
     flex-direction: row;
@@ -40,11 +76,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: url("../images/HelpPic.jpeg");
-        background-color: rgb(19, 8, 8);
+        background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .1)), url("../images/HelpPic.jpeg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-blend-mode: lighten;
         color: white;
     }
 
@@ -56,9 +90,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: url("../images/ApartmentPic1.jpeg");
+        background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .1)), url("../images/ApartmentPic3.jpeg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-blend-mode: lighten;
         color:white;
     }
