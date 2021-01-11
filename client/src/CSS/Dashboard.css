@@ -41,6 +41,7 @@
         align-items: center;
         flex-direction: column;
         background: url("../images/HelpPic.jpeg");
+        background-color: rgb(19, 8, 8);
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: lighten;
