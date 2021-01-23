@@ -33,7 +33,7 @@ const Dashboard = props => {
             {renderPopUp()}
             <i onClick={()=>props.setWhichPage("Login")}className="far logoutButton fa-3x fa-times-circle"></i>
             <div className="bar" onClick={()=>{setDashboardPopUp(true); setAreaClickedIn("Messages")}}>
-                <i className="fas fa-bell"></i>
+                <i className="fas fa-envelope"></i>
             </div>
             <div className="helpUser" onClick={()=>{setDashboardPopUp(true); setAreaClickedIn("Help A User")}}>
                 <h2>Help a user</h2>
