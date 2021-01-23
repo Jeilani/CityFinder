@@ -47,9 +47,23 @@ function BrowseArea(props) {
         onLoad={onLoad}
         onUnmount={onUnmount}
       > <div className="searchSideBar">
-          <div onClick={()=>{props.setWhichDashboardPage("Dashboard"); props.setAreaClickedIn(null); props.setDashboardPopUp(false)}} className="returnButton"><i className="fas fa-3x fa-arrow-circle-left"></i></div>
+          <div className="returnButton"><i  onClick={()=>{props.setWhichDashboardPage("Dashboard"); props.setAreaClickedIn(null); props.setDashboardPopUp(false)}} className="fas fa-3x fa-arrow-circle-left"></i></div>
           <form>
               <input className="searchInput" type="input" placeholder="Search apartment/city"></input>
+          </form>
+          <form>
+            <input placeholder = "location" type="text">
+
+            </input>
+            <input placeholder ="apartment" type="text">
+
+            </input>
+            <input placeholder="category" type="dropdown">
+
+            </input>
+            <textarea>
+              
+            </textarea>
           </form>
           <p className="clickInformational"><i className="fas fa-info-circle"></i>Click on an area or an apartment to ask questions to residents</p>
         </div>
