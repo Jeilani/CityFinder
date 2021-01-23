@@ -9,7 +9,7 @@
     .mainLoginContent{
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 80%;
         justify-content: center;
         align-items: flex-start;
         box-sizing: border-box;
