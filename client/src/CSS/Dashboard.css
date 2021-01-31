@@ -43,6 +43,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+.dashboard-enter {
+    opacity: 0;
+  }
+  .dashboard-active {
+    opacity: 1;
+    transition: opacity 800ms;
+  }
+  .dashboard-active-done{
+      opacity: 1;
+  }
     .logoutButton{
         position:absolute;
         right: 10px;

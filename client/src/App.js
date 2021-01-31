@@ -6,6 +6,7 @@ import "./CSS/App.css"
 function App () {
   const [whichPage, setWhichPage] = React.useState("Login")
 
+
   const renderPage = () => {
     switch (whichPage){
       case "Dashboard":
