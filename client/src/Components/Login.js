@@ -1,8 +1,7 @@
 import React from "react"
 import "../CSS/LoginPage.css"
 
-const Login = props => {
-    const setWhichPage = props.setWhichPage
+const Login = ({setWhichPage}) => {
     const [loginForm, setLoginForm] = React.useState(true)
 
     const renderLoginForm = () => {
@@ -22,7 +21,7 @@ const Login = props => {
                 </input>
                 <button
                 type="submit"
-                onClick={()=>setWhichPage("Dashboard")}
+                onClick={(e)=>{e.preventDefault(); setWhichPage("")}}
                 >
                     Login
                 </button>
@@ -53,7 +52,7 @@ const Login = props => {
                 </input>
                 <button
                 type="submit"
-                onClick={()=>setWhichPage("Dashboard")}
+                onClick={(e)=>{e.preventDefault(); setWhichPage("")}}
                 >
                     Login
                 </button>
@@ -67,7 +66,7 @@ const Login = props => {
                 <div className="mainLoginContent">
                     <p className="citySearchTitle">City Connect</p>
                     <h3>Create an account or login to chat with people who are looking to move in your area/apartment building and visa versa</h3>
-                    <h3>Apartment Hunt will let you interact anyone across the country so you can learn about the place you want to move to</h3>
+                    <h3>City Connect will let you interact with anyone across the country so you can learn about the place or area you want to move to</h3>
                 </div>
                 <div className="sideLoginContent">
                     <div className="loginToggle">

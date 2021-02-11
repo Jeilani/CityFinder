@@ -1,26 +1,44 @@
 import React from "react"
 import Dashboard from "./Components/Dashboard"
+import {CSSTransition} from "react-transition-group"
 import Login from "./Components/Login"
 import "./CSS/App.css"
 
 function App () {
   const [whichPage, setWhichPage] = React.useState("Login")
 
-
-  const renderPage = () => {
-    switch (whichPage){
-      case "Dashboard":
-        return <Dashboard setWhichPage = {setWhichPage}/>
-      case "Login":
-        return <Login setWhichPage = {setWhichPage}/>
-      default:
-        return <Login setWhichPage = {setWhichPage}/>
-    }
-  }
-
   return (
     <div className="App">
-      {renderPage()}
+        <CSSTransition
+                in={whichPage==="Login"}
+                timeout={{
+                  appear: 300,
+                  enter: 300,
+                  exit: 300
+                }}
+                classNames="login"
+                unmountOnExit={true}
+                appear={true}
+                mountOnEnter={true}
+                onExit={()=>setWhichPage("Dashboard")}
+        >
+          <Login setWhichPage={setWhichPage}/>
+        </CSSTransition>
+
+        <CSSTransition
+                in={whichPage==="Dashboard"}
+                timeout={{
+                  appear: 10000,
+                  enter: 10000,
+                  exit: 400
+                }}
+                classNames="login"
+                unmountOnExit={true}
+                appear={true}
+                mountOnEnter={true}
+          >
+          <Dashboard setWhichPage={setWhichPage}/>
+        </CSSTransition>
     </div>
   );
 }

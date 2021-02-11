@@ -1,0 +1,52 @@
+.messages{
+     position: absolute;
+     width: 80%;
+     height: 95%;
+     left: 10%;
+     background-color: rgb(131, 203, 224);
+     border-radius: 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     z-index: 3;
+     animation-name: slideMessagesDown;
+     animation-duration: .3s;
+     animation-timing-function: ease-in-out;
+ }
+
+
+ .slidemessagesuparrow{
+     position: absolute;
+     bottom: 2px;
+     left: 48%;
+     transition-duration: .5s;
+ }
+    .slidemessagesuparrow:hover{
+        transition-duration: .5s;
+        color: black;
+    }
+
+.closing{
+    animation-name: closing;
+    animation-duration: .8s;
+}
+
+@keyframes slideMessagesUp {
+    from {
+        height: 95%
+    }
+    to {
+        height: 5%;
+    }
+}
+
+ @keyframes slideMessagesDown {
+    from {
+        height: 5%
+    }
+
+    to {
+        height: 95%;
+    }
+}
