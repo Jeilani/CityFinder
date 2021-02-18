@@ -1,0 +1,52 @@
+.HelpAUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .1)), url("../images/HelpAUserBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    box-sizing: border-box;
+}
+
+    .HelpAUserTitle{
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .categoriesSection{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        flex-wrap: wrap;
+    }
+        .categoriesSection li{
+            border: 1px solid white;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    .returnButton i{
+        margin-left: 3px;
+        margin-right: 20px;
+        font-size: 3rem;
+        transition-duration: .2s;
+    }
+    .returnButton i:hover{
+        color: red;
+        transition-duration: .2s;
+    }

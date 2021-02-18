@@ -24,18 +24,19 @@ function App () {
         >
           <Login setWhichPage={setWhichPage}/>
         </CSSTransition>
-
         <CSSTransition
                 in={whichPage==="Dashboard"}
                 timeout={{
-                  appear: 10000,
-                  enter: 10000,
-                  exit: 400
+                  appear: 300,
+                  enter: 300,
+                  exit: 300
                 }}
-                classNames="login"
+                classNames="dashboardmain"
                 unmountOnExit={true}
                 appear={true}
                 mountOnEnter={true}
+                onExit={()=>setWhichPage("Login")}
+                enter={true}
           >
           <Dashboard setWhichPage={setWhichPage}/>
         </CSSTransition>

@@ -48,7 +48,7 @@ html{
 
   .login-enter-active{
     transform: translateX(0);
-    transition:300ms;
+    transition: 300ms;
   }
 
   .login-enter-done{
@@ -67,22 +67,22 @@ html{
   }
 
   .dashboardmain-enter {
-    transform:  translateX(50vw)
+    opacity: 0;
   }
   .dashboardmain-enter-active {
-    transform: translateX(0);
-    transition: transform 300ms;
+    opacity: 100%;
+    transition-duration: 300ms;
   }
   .dashboardmain-enter-done{
-    transform: translateX(0);
+    opacity: 100%;
   }
 
   .dashboardmain-appear{
-    transform:  translateX(50vw)
+    opacity: 0;
   }
   .dashboardmain-appear-active {
-    transform: translateX(0);
-    transition: transform 300ms;
+    opacity: 100%;
+    transition-duration: 300ms;
   }
   .dashboardmain-appear-done{
     transform: translateX(0)

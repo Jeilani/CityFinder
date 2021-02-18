@@ -13,7 +13,7 @@ const center = {
   lng: -38.523
 };
 
-function BrowseArea({setWhichDashboardPage, setDashboardPopUp, setAreaClickedIn}) {
+function BrowseArea({setWhichDashboardPage}) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyC2L0nnfFlL_0yZ95DZ4S2vL_nj0EKjghE"
@@ -47,24 +47,11 @@ function BrowseArea({setWhichDashboardPage, setDashboardPopUp, setAreaClickedIn}
         onLoad={onLoad}
         onUnmount={onUnmount}
       > <div className="searchSideBar">
-          <div className="returnButton"><i  onClick={()=>{setWhichDashboardPage("Dashboard"); setAreaClickedIn(null); setDashboardPopUp(false)}} className="fas fa-3x fa-arrow-circle-left"></i></div>
+          <div className="returnButton"><i  onClick={()=>{setWhichDashboardPage("Dashboard")}} className="fas fa-3x fa-arrow-circle-left"></i></div>
           <form>
               <input className="searchInput" type="input" placeholder="Search apartment/city"></input>
           </form>
-          <form>
-            <input placeholder = "location" type="text">
 
-            </input>
-            <input placeholder ="apartment" type="text">
-
-            </input>
-            <input placeholder="category" type="dropdown">
-
-            </input>
-            <textarea>
-
-            </textarea>
-          </form>
           <p className="clickInformational"><i className="fas fa-info-circle"></i>Click on an area or an apartment to ask questions to residents</p>
         </div>
         { /* Child components, such as markers, info windows, etc. */ }
