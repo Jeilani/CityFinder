@@ -18,7 +18,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
     .categoriesSection{
         height: 90%;
@@ -28,18 +27,39 @@
         align-items: center;
         list-style-type: none;
         flex-wrap: wrap;
+        box-sizing: border-box;
+        overflow-y: scroll;
     }
         .categoriesSection li{
-            border: 1px solid white;
             border-radius: 50%;
             width: 200px;
             height: 200px;
             box-sizing: border-box;
             text-align: center;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: rgba(0, 0, 0, .4);
+            margin: 20px;
         }
+        .categoriesSection li:hover{
+            background-color: rgba(256, 256, 256, .4);
+            transition-duration: 400ms;
+        }
+            .categoriesSection li i{
+                margin-bottom: 5px;
+            }
+
+.returnButton{
+    position: absolute;
+    top: 5%;
+    left: 10px;
+    display: flex;
+    width: 10%;
+    justify-content: flex-start;
+    align-items: center;
+}
     .returnButton i{
         margin-left: 3px;
         margin-right: 20px;

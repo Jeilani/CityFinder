@@ -14,8 +14,46 @@
      animation-duration: .3s;
      animation-timing-function: ease-in-out;
  }
+    .messagesSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 39%;
+        border-right: .4px solid gray;
+        height: 90%;
 
-
+    }
+        .messageSection h3{
+            display: flex;
+            width: 100%;
+            height: 20%
+        }
+        .messageListContainer{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 80%;
+            overflow-y: scroll;
+        }
+            .individualMessageContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                border: 1px solid black;
+                height: 80px;
+            }
+            .individualMessageContainer img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+    .conversationsSection{
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        height: 90%;
+    }
  .slidemessagesuparrow{
      position: absolute;
      bottom: 2px;
