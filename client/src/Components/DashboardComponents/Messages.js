@@ -15,7 +15,6 @@ const Messages = ({setMessagesShowing}) => {
                         <div className="msgName">{message.userName}</div>
                         <div className="msgPreview">{message.messages[0].content.substr(0, 20) + "..."}</div>
                     </div>
-
                 </div>
             )
 
@@ -36,6 +35,7 @@ const Messages = ({setMessagesShowing}) => {
             </div>
             <form onEnter={(e)=>{e.preventDefault()}}className="messagingForm">
                 <input className="messagingInput"type="text"></input>
+                <i className="fa-2x fas fa-arrow-up"></i>
             </form>
         </div>
     </div>
