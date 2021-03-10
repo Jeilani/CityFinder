@@ -1,4 +1,67 @@
 .questionsPageContainer{
     width: 100%;
     height: 100%;
+    box-sizing:  border-box;
+    display: flex;
+    flex-direction: column;
 }
+    .questionsPageHeader{
+        height: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+    }
+
+    .questionsPageHeader h1{
+        margin: none;
+    }
+
+    .individualQuestionsContainer{
+        height: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-y: scroll;
+    }
+        .individualQuestion{
+            position: relative;
+            color: white;
+            height: 300px;
+            width: 300px;
+            margin: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition-duration: .3s;
+        }
+            .individualQuestion:hover{
+                transform: scale(.8);
+                transition-duration: .3s;
+            }
+        .individualQuestion img{
+            border-radius: 50%;
+            margin-top: 5px;
+        }
+        .individualQuestionPopUp{
+            position: absolute;
+            left: 100px;
+            background-color: rgba(0, 0, 0, .5);
+            animation-name: transformPopUp;
+            animation-duration: .5s;
+        }
+        @keyframes transformPopUp{
+            from {transform: scale(.5)}
+            to {transform: scale(1)}
+        }
+        .individualQuestionTitle{
+            background-color: rgb(131, 203, 224);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+    .returnButtonQuestionsPage{
+        color: white;
+    }

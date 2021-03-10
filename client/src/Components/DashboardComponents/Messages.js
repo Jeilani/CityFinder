@@ -1,15 +1,14 @@
-import React, {useState} from "react"
+import React from "react"
 import "../../CSS/Messages.css"
 import {mockMessages} from "../../DummyData"
 
 const Messages = ({setMessagesShowing}) => {
-    const [showPopUp, setShowPopUp] = useState(false)
 
     const messagesList = mockMessages.map(message => {
         return (
                 <div className="individualMessageContainer">
                     <div className="msgImageContainer">
-                        <img className="msgImage" src={message.userImage}/>
+                        <img alt="user" className="msgImage" src={message.userImage}/>
                     </div>
                     <div className="msgMain">
                         <div className="msgName">{message.userName}</div>

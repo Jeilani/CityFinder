@@ -16,7 +16,6 @@ const Dashboard = ({setWhichPage}) => {
         if (messagesShowing) return <Messages setMessagesShowing={setMessagesShowing}/>
     }
 
-    console.log("dashbaord is mounted")
 
     if (whichDashboardPage === "Dashboard")
         return (

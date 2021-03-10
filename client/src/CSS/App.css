@@ -87,3 +87,23 @@ html{
   .dashboardmain-appear-done{
     transform: translateX(0)
   }
+
+  .returnButton{
+    position: absolute;
+    top: 5%;
+    left: 10px;
+    display: flex;
+    width: 10%;
+    justify-content: flex-start;
+    align-items: center;
+}
+    .returnButton i{
+        margin-left: 3px;
+        margin-right: 20px;
+        font-size: 3rem;
+        transition-duration: .2s;
+    }
+    .returnButton i:hover{
+        color: red;
+        transition-duration: .2s;
+    }

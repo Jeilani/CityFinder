@@ -4,7 +4,7 @@ import "../../CSS/HelpAUser.css"
 
 const HelpAUser = ({setWhichDashboardPage}) => {
     const [whichHelpAUserPage, setWhichHelpAUserPage] = useState("Regular")
-    console.log("render")
+
     if (whichHelpAUserPage === "Regular"){
     return (
         <div className="HelpAUser">
@@ -15,11 +15,11 @@ const HelpAUser = ({setWhichDashboardPage}) => {
                 <li onClick={()=>setWhichHelpAUserPage("Tourist Attractions")}><i className="fas fa-2x fa-binoculars"></i>Tourist Attractions</li>
                 <li onClick={()=>setWhichHelpAUserPage("Outdoors")}><i className="fas fa-2x fa-hiking"></i>Outdoors</li>
                 <li onClick={()=>setWhichHelpAUserPage("Parks")}><i className="fas fa-2x fa-tree"></i>Parks</li>
-                <li onCLick={()=>setWhichHelpAUserPage("Nightlife")}><i className="fas fa-2x fa-cocktail"></i>Nightlife</li>
+                <li onClick={()=>setWhichHelpAUserPage("NightLife")}><i className="fas fa-2x fa-cocktail"></i>Nightlife</li>
                 <li>All</li>
             </ul>
         </div>
-    )} else return <QuestionsPage whichQuestionsPage = {whichHelpAUserPage}/>
+    )} else return <QuestionsPage setWhichHelpAUserPage={setWhichHelpAUserPage} whichQuestionsPage = {whichHelpAUserPage}/>
 }
 
 export default HelpAUser
