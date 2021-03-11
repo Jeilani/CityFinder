@@ -67,22 +67,21 @@ html{
   }
 
   .dashboardmain-enter {
-    opacity: 0;
+    transform: translateX(100vw)
   }
   .dashboardmain-enter-active {
-    opacity: 100%;
+    transform: translateX(0);
     transition-duration: 300ms;
   }
   .dashboardmain-enter-done{
-    opacity: 100%;
+    transform: translateX();
   }
 
   .dashboardmain-appear{
-    opacity: 0;
+    transform: translateX(100vw)
   }
   .dashboardmain-appear-active {
-    opacity: 100%;
-    transition-duration: 300ms;
+    transform: translateX(0);
   }
   .dashboardmain-appear-done{
     transform: translateX(0)

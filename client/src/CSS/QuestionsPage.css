@@ -26,7 +26,6 @@
         overflow-y: scroll;
     }
         .individualQuestion{
-            position: relative;
             color: white;
             height: 300px;
             width: 300px;
@@ -44,17 +43,6 @@
         .individualQuestion img{
             border-radius: 50%;
             margin-top: 5px;
-        }
-        .individualQuestionPopUp{
-            position: absolute;
-            left: 100px;
-            background-color: rgba(0, 0, 0, .5);
-            animation-name: transformPopUp;
-            animation-duration: .5s;
-        }
-        @keyframes transformPopUp{
-            from {transform: scale(.5)}
-            to {transform: scale(1)}
         }
         .individualQuestionTitle{
             background-color: rgb(131, 203, 224);

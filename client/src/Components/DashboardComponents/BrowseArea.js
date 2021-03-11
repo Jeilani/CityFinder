@@ -39,6 +39,8 @@ function BrowseArea({setWhichDashboardPage}) {
     setMap(null)
   }, [])
 
+  console.log(map)
+  
   return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}

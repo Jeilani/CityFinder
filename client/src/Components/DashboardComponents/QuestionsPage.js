@@ -37,7 +37,7 @@ const QuestionsPage = ({whichQuestionsPage, setWhichHelpAUserPage}) => {
 
     const questionsList = mockPendingQuestions.map(eachQuestion => {
         return (
-            <div className="individualQuestion" onMouseEnter={()=>{setInQuestionBoxPopUp(true); setWhichQuestion(eachQuestion.questionId)}} onMouseLeave={()=>{setInQuestionBoxPopUp(false); setWhichQuestion(null)}}>
+            <div key = {eachQuestion.questionId} className="individualQuestion" onMouseEnter={()=>{setInQuestionBoxPopUp(true); setWhichQuestion(eachQuestion.questionId)}} onMouseLeave={()=>{setInQuestionBoxPopUp(false); setWhichQuestion(null)}}>
                 <div>{eachQuestion.firstName} {eachQuestion.lastName}</div>
                 <img alt="user profile" src={eachQuestion.profileImg}/>
                 {renderInQuestionBoxPopUp(eachQuestion)}

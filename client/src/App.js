@@ -5,12 +5,12 @@ import Login from "./Components/Login"
 import "./CSS/App.css"
 
 function App () {
-  const [whichPage, setWhichPage] = React.useState("Login")
+  const [whichPage, setWhichPage] = React.useState("Dashboard")
 
   return (
     <div className="App">
         <CSSTransition
-                in={whichPage==="Login"}
+                in={whichPage === "Login"}
                 timeout={{
                   appear: 300,
                   enter: 300,
@@ -36,7 +36,6 @@ function App () {
                 appear={true}
                 mountOnEnter={true}
                 onExit={()=>setWhichPage("Login")}
-                enter={true}
           >
           <Dashboard setWhichPage={setWhichPage}/>
         </CSSTransition>
