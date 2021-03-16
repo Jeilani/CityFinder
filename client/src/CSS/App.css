@@ -106,3 +106,7 @@ html{
         color: red;
         transition-duration: .2s;
     }
+
+    .headshot{
+      border-radius: 50%;
+    }
