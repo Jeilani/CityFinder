@@ -94,31 +94,46 @@
             align-items: center;
             height: 30px;
         }
+            .messagingForm .sendButton{
+                display: flex;
+                width: 5%;
+                padding: none;
+                justify-content: center;
+                align-items: center;
+                background: none;
+            }
             .messagingForm i{
-                width: 38px;
-                height: 38px;
+                width: 100%;
+                height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 color: rgb(32, 46, 124);
-                border: 1px solid gray;
                 border-radius: 50%;
-                background-color: gray;
                 transition-duration: .2s;
             }
                 .messagingForm i:hover{
-                    background-color: rgba(0, 0, 0, 0);
+                    background-color:rgb(131, 203, 224);
                     transition-duration: .2s;
-                    border: none;
+
                 }
             .messagingInput{
                 background-color: rgba(0, 0, 0, 0);
-                border-radius: 10px;
                 height: 100%;
-                width: 50%;
-                border: 1px solid rgb(131, 203, 224);
-
+                width: 70%;
+                border-radius: 20px;
+                border: 1px solid rgb(28, 17, 85);
+                font-family: 'Roboto', sans-serif;
+                padding-left: 10px;
+                color: white;
             }
+            .messagingInput:focus{
+                outline: 1px solid orange;
+            }
+            .messagingInput::placeholder{
+                color: white;
+            }
+
  .slidemessagesuparrow{
      position: absolute;
      bottom: 2px;

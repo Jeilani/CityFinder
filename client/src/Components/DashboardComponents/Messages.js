@@ -32,9 +32,9 @@ const Messages = ({setMessagesShowing}) => {
             <div className="thread">
 
             </div>
-            <form onEnter={(e)=>{e.preventDefault()}}className="messagingForm">
-                <input className="messagingInput"type="text"></input>
-                <i className="fa-2x fas fa-arrow-up"></i>
+            <form onEnter={(e)=>{e.preventDefault()}} className="messagingForm">
+                <input placeholder="...type your message here" className="messagingInput" type="text"></input>
+                <button className="sendButton" type="submit"><i className="far fa-paper-plane"></i></button>
             </form>
         </div>
     </div>

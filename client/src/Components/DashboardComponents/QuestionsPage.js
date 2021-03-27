@@ -5,11 +5,26 @@ import ParksImage from "../../images/HelpAUserImages//HelpAUserBasketballCourt.j
 import ApartmentImage from "../../images/HelpAUserImages/HelpAUserApartment.jpg"
 import OutdoorsImage from "../../images/HelpAUserImages/HelpAUserOutdoors.jpg"
 import TouristAttraction from "../../images/HelpAUserImages/HelpAUserTajMahal.jpg"
-import {mockPendingQuestions} from "../../DummyData"
+import {useSelector, useDispatch} from "react-redux"
+import {setQuestion} from "../../actions"
 import QuestionsPopUp from "./QuestionsComponents/QuestionsPopUp"
 
 const QuestionsPage = ({whichQuestionsPage, setWhichHelpAUserPage}) => {
-    let backgroundPic;
+    const dispatch = useDispatch()
+    const [questionPopUp, setQuestionPopUp] = useState(false)
+    const pendingQuestions = useSelector(state=>state.pendingQuestions)
+    const questionsList = pendingQuestions.map(eachQuestion => {
+        return (
+            <div key = {eachQuestion.questionId} className="individualQuestion" onClick={()=>{dispatch(setQuestion(eachQuestion)); setQuestionPopUp(true); }}>
+                <div>{eachQuestion.firstName} {eachQuestion.lastName}</div>
+                <img alt="user profile" src={eachQuestion.profileImg}/>
+                <div className='individualQuestionTitle'>{eachQuestion.title.substring(0, 60)} ...</div>
+            </div>
+        )
+    })
+
+    let backgroundPic
+    //switch statement below is determining what the above backgroundPic should be based on what category of questins was clicked
     switch(whichQuestionsPage){
         case "Apartment":
             backgroundPic = ApartmentImage
@@ -29,25 +44,9 @@ const QuestionsPage = ({whichQuestionsPage, setWhichHelpAUserPage}) => {
         default: backgroundPic = ApartmentImage
     }
 
-    const [questionPopUp, setQuestionPopUp] = useState(false)
-    const [whichQuestion, setWhichQuestion] = useState(null)
-    const questionsList = mockPendingQuestions.map(eachQuestion => {
-        return (
-            <div key = {eachQuestion.questionId} className="individualQuestion" onClick={()=>{setQuestionPopUp(true); setWhichQuestion(eachQuestion)}}>
-                <div>{eachQuestion.firstName} {eachQuestion.lastName}</div>
-                <img alt="user profile" src={eachQuestion.profileImg}/>
-                <div className='individualQuestionTitle'>{eachQuestion.title.substring(0, 60)} ...</div>
-            </div>
-        )
-    })
-
-    const renderQuestionPopUp = () => {
-        if (questionPopUp) return <QuestionsPopUp setWhichQuestion={setWhichQuestion} setQuestionPopUp={setQuestionPopUp} chosenQuestion={whichQuestion}/>
-        else return null
-    }
     return (
         <div className="questionsPageContainer" style={{background: `linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .1)), url(${backgroundPic}`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-            {renderQuestionPopUp()}
+            {questionPopUp?<QuestionsPopUp setQuestionPopUp={setQuestionPopUp}/>:null}
             <div className="questionsPageHeader">
                 <h1>Here are all the questions about {whichQuestionsPage.toLowerCase()} in your area</h1>
                 <h3>Click on one's that interest you to start a conversation and make a friend</h3>

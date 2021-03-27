@@ -1,3 +1,14 @@
+@keyframes textUp {
+    from {
+        opacity: 0;
+        transform: translate(-20px, 100px)
+    }
+    to {
+        opacity: 100;
+        transform: translate(0)
+    }
+  }
+
 .questionsPopUpContainer{
     position: absolute;
     width: 100%;
@@ -6,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3
+    z-index: 3;
 }
     .questionsPopUp{
         display: flex;
@@ -23,17 +34,28 @@
         .questionsContentContainer{
             display: flex;
             flex-direction: column;
-            width: 90%;
-            height: 80%;
+            width: 100%;
+            height: 100%;
+            padding: 5%;
             align-items: center;
+            box-sizing: border-box;
+        }
+        .questionsContentContainer .firstHalf{
+            display: flex;
+            flex-direction: column;
+            overflow-y: scoll;
+            height: 50%;
+            width: 100%;
         }
             .questionsPopUpHeadshot{
+                align-self: center;
                 width: 50px;
                 height: 50px;
                 margin-bottom: 5px;
             }
             .questionsContentContainer .name{
                 font-size: .7rem;
+                align-self: center;
             }
             .questionsContentContainer .userText{
                 border-bottom-left-radius: 0;
@@ -49,6 +71,30 @@
                 background-color: rgba(26, 119, 139, 0.7);
                 color: white;
             }
+
+            .questionsContentContainer .myText{
+                animation-name: textUp;
+                animation-duration: .5s;
+                padding: 10px;
+                box-sizing: border-box;
+                align-self: flex-end;
+                margin-left: 5px;
+                margin-top: 20px;
+                font-weight: 2;
+                border-radius: 20px;
+                border-bottom-right-radius: 0;
+                width: 50%;
+                background-color: rgba(22, 131, 36, 0.7);
+                color: white;
+            }
+
+        .questionsContentContainer .secondHalf{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 50%;
+        }
             .automatedResponsesContainer{
                 height: 20%;
                 display: flex;
@@ -75,11 +121,31 @@
             .questionsContentContainer form{
                 margin-top: 40px;
                 width: 80%;
+                display: flex;
+                height: 10%;
             }
             .questionsContentContainer input{
-                width: 100%;
+                width: 85%;
                 border: 0;
                 border-bottom: 1px solid gray;
                 font-family: 'Roboto', sans-serif;
                 padding-left: 10px;
             }
+            .questionSubmitButton{
+                width: 15%;
+                height: 100%;
+                background-color: rgba(22, 131, 36, 0.7);
+                color: white;
+            }
+
+@media only screen and (max-width: 800px) {
+    .questionsPopUp{
+        width: 90%;
+        height: 80%;
+    }
+
+    .automatedResponse{
+        font-size: .8rem;
+    }
+}
+
