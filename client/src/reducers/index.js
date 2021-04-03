@@ -14,11 +14,12 @@ const messages = (state = mockMessages, action) =>{
 }
 
 const pendingQuestions = (state = mockPendingQuestions, action) => {
+
     switch(action.type){
         case "ADD_QUESTION":
             return [state, action.payload]
         case "DELETE_QUESTION":
-            return [state.filter(eachQuestion=>eachQuestion.questionId !== action.payload.questionId)]
+            return state.filter(eachQuestion=>eachQuestion.questionId !== action.payload.questionId)
         default:
             return state
     }

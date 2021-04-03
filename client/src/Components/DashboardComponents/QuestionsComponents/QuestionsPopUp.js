@@ -47,11 +47,9 @@ const QuestionsPopUp = ({setQuestionPopUp}) => {
             messages: []
         }
 
-        setTimeout(()=>{
             setConfirmationScreenShowing(true)
             dispatch(addMessage(message))
             dispatch(deleteQuestion(chosenQuestion))
-        }, 1000)
     }
 
     const renderUserText = () => {

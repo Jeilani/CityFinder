@@ -43,7 +43,6 @@ const QuestionsPage = ({whichQuestionsPage, setWhichHelpAUserPage}) => {
             break;
         default: backgroundPic = ApartmentImage
     }
-
     return (
         <div className="questionsPageContainer" style={{background: `linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .1)), url(${backgroundPic}`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
             {questionPopUp?<QuestionsPopUp setQuestionPopUp={setQuestionPopUp}/>:null}
