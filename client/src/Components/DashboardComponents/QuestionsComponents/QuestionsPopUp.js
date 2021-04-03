@@ -41,15 +41,18 @@ const QuestionsPopUp = ({setQuestionPopUp}) => {
 
         let message = {
             userID: chosenQuestion.userId,
+            userName: `${chosenQuestion.firstName} ${chosenQuestion.lastName}`,
             messageId: generateId(),
             userImage: chosenQuestion.profileImg,
             threadId: generateId(),
-            messages: []
+            messages: [{content: response}]
         }
 
+        setTimeout(()=>{
             setConfirmationScreenShowing(true)
             dispatch(addMessage(message))
             dispatch(deleteQuestion(chosenQuestion))
+        }, 1000)
     }
 
     const renderUserText = () => {

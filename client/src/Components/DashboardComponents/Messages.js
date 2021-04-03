@@ -1,10 +1,10 @@
 import React from "react"
 import "../../CSS/Messages.css"
-import {mockMessages} from "../../DummyData"
+import {useSelector} from "react-redux"
 
 const Messages = ({setMessagesShowing}) => {
-
-    const messagesList = mockMessages.map(message => {
+    const messages = useSelector(state=>state.messages)
+    const messagesList = messages.map(message => {
         return (
                 <div className="individualMessageContainer">
                     <div className="msgImageContainer">
