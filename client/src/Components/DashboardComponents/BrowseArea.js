@@ -1,6 +1,8 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import "../../CSS/BrowseArea.css"
+import {setWhichDashboardPageToDashboard} from "../../actions"
+import {useDispatch} from "react-redux"
 
 const containerStyle = {
     left: '30vw',
@@ -13,7 +15,8 @@ const center = {
   lng: -38.523
 };
 
-function BrowseArea({setWhichDashboardPage}) {
+const BrowseArea = ({setWhichDashboardPage}) => {
+  const dispatch = useDispatch()
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyC2L0nnfFlL_0yZ95DZ4S2vL_nj0EKjghE"
@@ -40,7 +43,7 @@ function BrowseArea({setWhichDashboardPage}) {
   }, [])
 
   console.log(map)
-  
+
   return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -49,7 +52,7 @@ function BrowseArea({setWhichDashboardPage}) {
         onLoad={onLoad}
         onUnmount={onUnmount}
       > <div className="searchSideBar">
-          <div className="returnButton"><i  onClick={()=>{setWhichDashboardPage("Dashboard")}} className="fas fa-3x fa-arrow-circle-left"></i></div>
+          <div className="returnButton"><i  onClick={()=>{dispatch(setWhichDashboardPageToDashboard())}} className="fas fa-3x fa-arrow-circle-left"></i></div>
           <form>
               <input className="searchInput" type="input" placeholder="Search apartment/city"></input>
           </form>

@@ -5,42 +5,10 @@ import Login from "./Components/Login"
 import "./CSS/App.css"
 
 function App () {
-  const [whichPage, setWhichPage] = React.useState("Dashboard")
+  const [whichPage, setWhichPage] = React.useState("Login")
 
-  return (
-    <div className="App">
-        <CSSTransition
-                in={whichPage === "Login"}
-                timeout={{
-                  appear: 300,
-                  enter: 300,
-                  exit: 300
-                }}
-                classNames="login"
-                unmountOnExit={true}
-                appear={true}
-                mountOnEnter={true}
-                onExit={()=>setWhichPage("Dashboard")}
-        >
-          <Login setWhichPage={setWhichPage}/>
-        </CSSTransition>
-        <CSSTransition
-                in={whichPage==="Dashboard"}
-                timeout={{
-                  appear: 300,
-                  enter: 300,
-                  exit: 300
-                }}
-                classNames="dashboardmain"
-                unmountOnExit={true}
-                appear={true}
-                mountOnEnter={true}
-                onExit={()=>setWhichPage("Login")}
-          >
-          <Dashboard setWhichPage={setWhichPage}/>
-        </CSSTransition>
-    </div>
-  );
+  if (whichPage === "Login") return <Login setWhichPage={setWhichPage}/>
+  else return <Dashboard setWhichPage={setWhichPage}/>
 }
 
 export default App;

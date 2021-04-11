@@ -1,0 +1,36 @@
+.WarningMessageContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation-name: dropdown;
+    animation-duration: .5s;
+}
+    .WarningMessage{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: white;
+        top: 0;
+        left: 30%;
+        color: red;
+    }
+        .WarningMessage i{
+            margin-left: 10px;
+            color: red;
+        }
+
+@keyframes dropdown {
+    from{
+        transform: translateY(-20vh)
+    }
+    to{
+        transform: translateY(0)
+    }
+}

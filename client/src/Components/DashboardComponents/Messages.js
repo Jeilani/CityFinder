@@ -1,17 +1,23 @@
-import React from "react"
+import React, {useState} from "react"
 import "../../CSS/Messages.css"
-import {useSelector} from "react-redux"
+import {useSelector, useDispatch} from "react-redux"
+import {setMessagesHiding} from "../../actions"
 
-const Messages = ({setMessagesShowing}) => {
+const Messages = () => {
+    const dispatch = useDispatch()
     const messages = useSelector(state=>state.messages)
+    const [whichMessageClicked, setWhichMessageClicked] = useState(messages[0])
+    const handleMessageClick = (message) => {
+        setWhichMessageClicked(message)
+    }
     const messagesList = messages.map(message => {
         return (
-                <div className="individualMessageContainer">
+                <div className={`individualMessageContainer ${message.messageId === whichMessageClicked.messageId? 'clickedMessage':null}`} onClick={()=>handleMessageClick(message)}>
                     <div className="msgImageContainer">
                         <img alt="user" className="msgImage" src={message.userImage}/>
                     </div>
                     <div className="msgMain">
-                        <div className="msgName">{message.userName}</div>
+                        <div className={`${message.messageId === whichMessageClicked.messageId?'clickedmsgName':'msgName'}`}>{message.userName}</div>
                         <div className="msgPreview">{message.messages[0].content.substr(0, 20) + "..."}</div>
                     </div>
                 </div>
@@ -20,7 +26,7 @@ const Messages = ({setMessagesShowing}) => {
         })
     return (
     <div className="messages">
-        <i onClick={()=>{setMessagesShowing(false)}} className="fas slidemessagesuparrow fa-2x fa-chevron-up"></i>
+        <i onClick={()=>dispatch(setMessagesHiding())} className="fas slidemessagesuparrow fa-2x fa-chevron-up"></i>
         <div className="messagesSection">
             <h3>Messages</h3>
             <div className="messageListContainer">

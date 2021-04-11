@@ -120,23 +120,45 @@
                 }
             .questionsContentContainer form{
                 margin-top: 40px;
-                width: 80%;
+                width: 73%;
                 display: flex;
+                justify-content: flex-start;
                 height: 10%;
             }
             .questionsContentContainer input{
-                width: 85%;
+                width: 90%;
                 border: 0;
-                border-bottom: 1px solid gray;
+                border-radius: 20px;
+                padding: 3px;
+                border: 1px solid rgb(6, 11, 40);
                 font-family: 'Roboto', sans-serif;
                 padding-left: 10px;
             }
             .questionSubmitButton{
-                width: 15%;
+                width: 10%;
                 height: 100%;
-                background-color: rgba(22, 131, 36, 0.7);
-                color: white;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+                background-color: inherit;
             }
+                .questionSubmitButton i{
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    color:rgba(22, 131, 36, 0.7);
+                    transition-duration: .4s;
+                }
+                    .questionSubmitButton i:hover{
+                        color: black;
+                        transition-duration:.4s;
+                    }
 
 @media only screen and (max-width: 800px) {
     .questionsPopUp{
