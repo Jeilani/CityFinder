@@ -18,6 +18,8 @@ const ConfirmationScreen = ({setQuestionPopUp}) => {
         <div className="questionsPopUpContainer" onClick={()=>handleConfirmationScreenExit()}>
             <div className="confirmationPopUp" onClick={(e)=>e.stopPropagation} >
                 <p>Awesome, you just started a conversation with {chosenQuestion.firstName} {chosenQuestion.lastName}. <br/>Go to the messages component to continue the conversation or start another chat here</p>
+                <br></br>
+                <p>Click here or exit to go to messages</p>
                 <i className="fas fa-3x fa-check"></i>
             </div>
         </div>
