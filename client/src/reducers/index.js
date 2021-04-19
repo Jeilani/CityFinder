@@ -5,7 +5,7 @@ import { mockMessages, mockPendingQuestions} from "../DummyData"
 const messages = (state = mockMessages, action) =>{
     switch(action.type){
         case "ADD_MESSAGE":
-            return [...state, action.payload]
+            return [action.payload, ...state]
         case "DELETE_MESSAGE":
             return [...state.filter(eachMessage=>eachMessage.messageId !== action.payload.messageId)]
         default:
