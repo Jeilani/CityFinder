@@ -1,7 +1,7 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import "../../CSS/BrowseArea.css"
-import SearchSidebar from "./SearhSidebar"
+import SearchSidebar from "./BrowseAreaFolder/SearchSidebar.js"
 
 const containerStyle = {
     left: '30vw',
@@ -22,18 +22,30 @@ const BrowseArea = ({setWhichDashboardPage}) => {
   const mapRef = React.useRef()
   const [map, setMap] = React.useState(null)
 
+
+  const relocate = () => {
+    navigator.geolocation.getCurrentPosition(position=>{
+      map.panTo(
+        {lat: position.coords.latitude,
+          lng: position.coords.longitude}
+        )
+        map.setZoom(14)
+        setMap(map)
+    }, err=>{console.log("error in locater button" + err)})
+  }
+
   const onLoad = React.useCallback(function callback(map) {
     navigator.geolocation.getCurrentPosition(position=>{
-        mapRef.current = map;
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
-        map.panTo(
-          {lat: position.coords.latitude,
-            lng: position.coords.longitude}
-          )
-          map.setZoom(14)
-          setMap(map)
-        }, (err)=>{console.log(err)});
+      mapRef.current = map;
+      const bounds = new window.google.maps.LatLngBounds();
+      map.fitBounds(bounds);
+      map.panTo(
+        {lat: position.coords.latitude,
+          lng: position.coords.longitude}
+        )
+        map.setZoom(14)
+        setMap(map)
+      }, (err)=>{console.log(err)});
     }, [])
 
   const onUnmount = React.useCallback(function callback(map) {
@@ -49,6 +61,7 @@ const BrowseArea = ({setWhichDashboardPage}) => {
         onUnmount={onUnmount}
       >
         <SearchSidebar/>
+        <i className="fas locate fa-location-arrow" onClick = {()=>{relocate()}}></i>
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
       </GoogleMap>

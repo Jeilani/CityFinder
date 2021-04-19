@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import {useSelector, useDispatch} from "react-redux"
 import "../CSS/Dashboard.css"
 import BrowseArea from "./DashboardComponents/BrowseArea"
@@ -10,7 +10,6 @@ const Dashboard = ({setWhichPage}) => {
     const dispatch = useDispatch()
     const whichDashboardPage = useSelector(state=>state.whichDashboardPage)
     const messagesShowing = useSelector(state=>state.messagesShowing)
-    const [transitionOut, setTransitionOut] = useState(false)
 
     const handleMessagesSlideDown = () => {
         dispatch(setMessagesShowing())
@@ -20,17 +19,9 @@ const Dashboard = ({setWhichPage}) => {
         if (messagesShowing) return <Messages/>
     }
 
-    const transitionToLogin = () => {
-        setTransitionOut(true)
-        setTimeout(()=>{
-            setWhichPage("Login")
-            setTransitionOut(false)
-        }, 1000)
-    }
-
     if (whichDashboardPage === "Dashboard")
         return (
-                    <div className={`dashboard ${transitionOut?'dashboardOut':null}`}>
+                    <div className="dashboard">
                         {showMessages()}
                         <i onClick={(e)=>{e.preventDefault();setWhichPage("Login")}}className="far logoutButton fa-3x fa-times-circle"></i>
                         <div className="bar" onClick={()=>{handleMessagesSlideDown()}}>

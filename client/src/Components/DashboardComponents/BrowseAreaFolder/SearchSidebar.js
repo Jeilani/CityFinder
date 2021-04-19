@@ -1,6 +1,7 @@
 import React from "react"
-import {setWhichDashboardPageToDashboard} from "../../actions"
+import {setWhichDashboardPageToDashboard} from "../../../actions"
 import {useDispatch} from "react-redux"
+import "../../../CSS/SearchSidebar.css"
 
 const SearchSidebar = () => {
     const dispatch = useDispatch()
@@ -10,7 +11,7 @@ const SearchSidebar = () => {
         <form>
             <input className="searchInput" type="input" placeholder="Search apartment/city"></input>
         </form>
-
+        <div className="categoriesContainer"></div>
         <p className="clickInformational"><i className="fas fa-info-circle"></i>Click on an area or an apartment to ask questions to residents</p>
       </div>
     )

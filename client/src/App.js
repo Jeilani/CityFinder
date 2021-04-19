@@ -1,6 +1,5 @@
 import React from "react"
 import Dashboard from "./Components/Dashboard"
-import {CSSTransition} from "react-transition-group"
 import Login from "./Components/Login"
 import "./CSS/App.css"
 
