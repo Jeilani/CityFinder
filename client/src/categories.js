@@ -1,23 +1,23 @@
 const categories = [
 {
     name: "Apartment",
-    iconClassNames: "far fa-2x fa-building"
+    iconClassNames: "far fa-building"
 },
 {
     name: "Tourist Attractions",
-    iconClassNames: "fas fa-2x fa-binoculars"
+    iconClassNames: "fas fa-binoculars"
 },
 {
     name: "Outdoors",
-    iconClassNames: "fas fa-2x fa-hiking",
+    iconClassNames: "fas fa-hiking",
 },
 {
     name: "Parks",
-    iconClassNames: "fas fa-2x fa-tree",
+    iconClassNames: "fas fa-tree",
 },
 {
     name: "Nightlife",
-    iconClassNames: "fas fa-2x fa-cocktail"
+    iconClassNames: "fas fa-cocktail"
 },
 {
     name: "All",

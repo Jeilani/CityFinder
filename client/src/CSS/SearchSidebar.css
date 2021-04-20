@@ -1,4 +1,79 @@
-.categoriesContainer{
+.searchSideBar{
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    top: 0;
+    left: 0;
     display: flex;
-    border: 1px solid black;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: rgb(27, 25, 25);
+    color: rgb(151, 148, 148);
+}
+    .searchSideBar form{
+        display: flex;
+        flex-direction: column;
+        height: 10%;
+        width: 100%;
+        align-items: center;
+    }
+        .searchSideBar form .searchInput{
+            width: 80%;
+            display: flex;
+            text-align: center;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            background-color: rgb(46, 43, 43);
+            color: rgb(151, 148, 148);
+        }
+.categoriesContainer{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+    .categoriesContainer li{
+        border-radius: 50%;
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        text-align: center;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        font-size: .88rem;
+        transition-duration: .4s;
+    }
+    .categoriesContainer li:hover{
+        transition-duration: 400ms;
+        background-color: rgb(27, 25, 25);
+        border: 1px solid  rgb(26, 113, 107);
+    }
+    .addBorder{
+        border: 1px solid  rgb(26, 113, 107);
+    }
+        .categoriesContaier li i{
+            margin-bottom: 5px;
+        }
+.searchSideBar .clickInformational{
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.returnButton{
+    color: rgb(75, 73, 73);
 }

@@ -10,7 +10,7 @@ const HelpAUser = () => {
     const dispatch = useDispatch()
     const categoriesList = categories.map(({name, iconClassNames})=>{
         return (
-            <li key={name} onClick={()=>setWhichHelpAUserPage(name)}><i className={`${iconClassNames}`}></i>{name}</li>
+            <li key={name} onClick={()=>setWhichHelpAUserPage(name)}><i className={`${iconClassNames} fa-2x`}></i>{name}</li>
         )
     })
     if (whichHelpAUserPage === "Regular"){

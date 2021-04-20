@@ -25,7 +25,7 @@ const Messages = () => {
                         <img alt="user" className="msgImage" src={message.userImage}/>
                     </div>
                     <div className="msgMain">
-                        <div className={`${message.messageId === whichMessageClicked.messageId?'clickedmsgName':'msgName'}`}>{message.userName}</div>
+                        <div className="msgName">{message.userName}</div>
                         <div className="msgPreview">{message.messages[0].content.substr(0, 20) + "..."}</div>
                     </div>
                 </div>

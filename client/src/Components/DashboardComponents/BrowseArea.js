@@ -2,6 +2,7 @@ import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import "../../CSS/BrowseArea.css"
 import SearchSidebar from "./BrowseAreaFolder/SearchSidebar.js"
+import mapStyles from "../../mapStyles"
 
 const containerStyle = {
     left: '30vw',
@@ -14,6 +15,12 @@ const center = {
   lng: -38.523
 };
 
+const options = {
+  styles: mapStyles,
+  disableDefaultUI: true
+}
+
+
 const BrowseArea = ({setWhichDashboardPage}) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -21,18 +28,6 @@ const BrowseArea = ({setWhichDashboardPage}) => {
   })
   const mapRef = React.useRef()
   const [map, setMap] = React.useState(null)
-
-
-  const relocate = () => {
-    navigator.geolocation.getCurrentPosition(position=>{
-      map.panTo(
-        {lat: position.coords.latitude,
-          lng: position.coords.longitude}
-        )
-        map.setZoom(14)
-        setMap(map)
-    }, err=>{console.log("error in locater button" + err)})
-  }
 
   const onLoad = React.useCallback(function callback(map) {
     navigator.geolocation.getCurrentPosition(position=>{
@@ -52,6 +47,17 @@ const BrowseArea = ({setWhichDashboardPage}) => {
     setMap(null)
   }, [])
 
+  const relocate = () => {
+    navigator.geolocation.getCurrentPosition(position=>{
+      map.panTo(
+        {lat: position.coords.latitude,
+          lng: position.coords.longitude}
+        )
+        map.setZoom(14)
+        setMap(map)
+    }, err=>{console.log("error in locater button" + err)})
+  }
+
   return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -59,6 +65,7 @@ const BrowseArea = ({setWhichDashboardPage}) => {
         zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
+        options={options}
       >
         <SearchSidebar/>
         <i className="fas locate fa-location-arrow" onClick = {()=>{relocate()}}></i>
