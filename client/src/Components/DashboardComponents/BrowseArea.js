@@ -11,8 +11,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 74.0060,
+  lng: 40.7128
 };
 
 const options = {
@@ -24,7 +24,7 @@ const options = {
 const BrowseArea = ({setWhichDashboardPage}) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyC2L0nnfFlL_0yZ95DZ4S2vL_nj0EKjghE"
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY
   })
   const mapRef = React.useRef()
   const [map, setMap] = React.useState(null)
@@ -58,6 +58,8 @@ const BrowseArea = ({setWhichDashboardPage}) => {
     }, err=>{console.log("error in locater button" + err)})
   }
 
+  console.log("map is ")
+  console.log(map)
   return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
