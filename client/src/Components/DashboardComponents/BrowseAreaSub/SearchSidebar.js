@@ -1,23 +1,22 @@
-import React, { useState } from "react"
+import React from "react"
 import {setWhichDashboardPageToDashboard} from "../../../actions"
 import {useDispatch} from "react-redux"
 import "../../../CSS/SearchSidebar.css"
 import categories from "../../../categories"
 
-const SearchSidebar = () => {
+const SearchSidebar = ({whichCategory, searchCategoriesNearby}) => {
     const dispatch = useDispatch()
-    const [whichCategory, setwhichCategory] = useState("All")
     const categoriesList = categories.map(({name, iconClassNames})=>{
         let isCategory = name === whichCategory
         return (
-            <li className={`${isCategory?'addBorder':null}`}key={name} onClick={()=>setwhichCategory(name)}><i className={`${iconClassNames}`}></i>{name}</li>
+            <li className={`${isCategory?'clickedCategory':'notClickedCategory'}`}key={name} onClick={()=>{searchCategoriesNearby(name)}}><i className={`${iconClassNames}`}></i>{name}</li>
         )
     })
     return (
         <div className="searchSideBar">
         <div className="returnButton"><i  onClick={()=>{dispatch(setWhichDashboardPageToDashboard())}} className="fas fa-3x fa-arrow-circle-left"></i></div>
         <form>
-            <input className="searchInput" type="input" placeholder="Search apartment/city"></input>
+            <input className="searchInput" type="input" placeholder="Search a city"></input>
         </form>
         <ul className="categoriesContainer">
             {categoriesList}

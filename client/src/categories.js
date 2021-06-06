@@ -8,7 +8,7 @@ const categories = [
     iconClassNames: "fas fa-binoculars"
 },
 {
-    name: "Outdoors",
+    name: "Outdoor",
     iconClassNames: "fas fa-hiking",
 },
 {
@@ -18,10 +18,6 @@ const categories = [
 {
     name: "Nightlife",
     iconClassNames: "fas fa-cocktail"
-},
-{
-    name: "All",
-    iconClassNames: ""
 }
 ]
 export default categories
