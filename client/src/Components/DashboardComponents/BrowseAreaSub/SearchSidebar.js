@@ -3,8 +3,9 @@ import {setWhichDashboardPageToDashboard} from "../../../actions"
 import {useDispatch} from "react-redux"
 import "../../../CSS/SearchSidebar.css"
 import categories from "../../../categories"
+import Search from "./Search"
 
-const SearchSidebar = ({whichCategory, searchCategoriesNearby}) => {
+const SearchSidebar = ({whichCategory, searchCategoriesNearby, panTo}) => {
     const dispatch = useDispatch()
     const categoriesList = categories.map(({name, iconClassNames})=>{
         let isCategory = name === whichCategory
@@ -12,12 +13,11 @@ const SearchSidebar = ({whichCategory, searchCategoriesNearby}) => {
             <li className={`${isCategory?'clickedCategory':'notClickedCategory'}`}key={name} onClick={()=>{searchCategoriesNearby(name)}}><i className={`${iconClassNames}`}></i>{name}</li>
         )
     })
+
     return (
         <div className="searchSideBar">
         <div className="returnButton"><i  onClick={()=>{dispatch(setWhichDashboardPageToDashboard())}} className="fas fa-3x fa-arrow-circle-left"></i></div>
-        <form>
-            <input className="searchInput" type="input" placeholder="Search a city"></input>
-        </form>
+        <Search panTo={panTo}/>
         <ul className="categoriesContainer">
             {categoriesList}
         </ul>

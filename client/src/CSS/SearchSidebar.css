@@ -24,10 +24,18 @@
             display: flex;
             text-align: center;
             height: 30px;
-            border-radius: 10px;
-            border: 1px solid gray;
             background-color: rgb(46, 43, 43);
-            color: rgb(151, 148, 148);
+
+            padding: 20px;
+        }
+        .searchSideBar form .suggestionsResultsContainer{
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .searchSideBar form .suggestionsResults{
+            position: absolute;
+            border: 1px solid orange;
         }
 .categoriesContainer{
     height: 80%;

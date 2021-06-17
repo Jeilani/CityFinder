@@ -28,15 +28,15 @@ const BrowseArea = ({setWhichDashboardPage}) => {
   const [isLoading, setIsLoading] = useState(false)
   const [showFailedResults, setShowFailedResults] = useState(false)
 
-  // const { isLoaded } = useJsApiLoader({
-  //   id: 'google-map-script',
-  //   googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
-  // })
-
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
     libraries: places,
   });
+
+  const panTo = React.useCallback(({lat, lng})=>{
+    mapRef.current.panTo({lat, lng})
+    mapRef.current.setZoom(16)
+  }, [])
 
   const mapRef = useRef()
   const [map, setMap] = useState(null)
@@ -133,7 +133,7 @@ const BrowseArea = ({setWhichDashboardPage}) => {
         {showFailedResults?<WarningMessage message={`No results for ${whichCategory.toLowerCase()} in this area`}/>:null}
         {isLoading?<LoadingScreen/>:null}
         {chosenMarker?<ChosenMarker map={map} data={chosenMarker} setChosenMarker={setChosenMarker}/>:null}
-        <SearchSidebar searchCategoriesNearby={searchCategoriesNearby} whichCategory={whichCategory}/>
+        <SearchSidebar panTo={panTo} searchCategoriesNearby={searchCategoriesNearby} whichCategory={whichCategory}/>
         <i className="fas locate fa-location-arrow" onClick = {()=>{relocate()}}></i>
         { /* Child components, such as markers, info windows, etc. */ }
         {isLoaded?callMarkers():null}

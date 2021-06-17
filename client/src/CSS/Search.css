@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.search input {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+
+  }
+
+  .comboboxlist{
+      background-color: black;
+      color: white;
+  }
+@media only screen and (max-width: 700px) {
+    .search{
+        left: 50%;
+    }
+}
